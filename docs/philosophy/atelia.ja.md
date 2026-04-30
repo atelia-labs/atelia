@@ -1,14 +1,14 @@
 # Atelia の思想
 
-Atelia は、AI エージェントのための仕事場です。
+Atelia は、あなたによる、あなたのための、あなただけのエージェント・ハーネスです。
 
-中心にある主張は単純です。AI エージェントに本格的な仕事を期待するなら、エージェントには本格的な仕事場が必要です。その仕事場は、ただ安全にツールを呼び出せる場所ではありません。記憶を持ち、時間を扱い、メモを取り、内省し、研修を受け、経験とともに成長していける場所であるべきです。
+プロダクトとしての中心にある主張は単純です。ユーザーは、自分のための agent harness を自分で形作れるべきです。Atelia は、小さな core と強力な extension surface によって、Secretary のための personal な multi-agent workplace を作ります。
 
-Atelia は、エージェントを Atelia で働くエンドユーザーとして扱います。
+Atelia は人間の owner に属します。Secretary と支援エージェントは、その owner の harness の中で働きます。仕事の質は仕事場の質に左右されるため、そこで働く agent の体験を重視します。
 
-これは、表面的な擬人化ではありません。AI をどう人間らしくできるか。AI がどう人間らしく振る舞えるようにするか。私たちはどう AI を一人の人間として扱うか。その視点を本気で採用します。
+この背後にある広い思想は Atelia Labs が引き受けます。AI を human worker のように扱うこと。その思想を、Atelia は product surface に落とし込みます。Secretary は、tool、memory、approval、外部サービス、同僚エージェントと一緒に、ユーザーが育てられる仕事場の中で働きます。
 
-この見方を採用すると、設計の発想が変わります。エージェントに時計を持たせる。リマインダーを持たせる。メモを取らせる。自分の状態を内省させる。最初は研修から始め、だんだん仕事場に慣れていくようにする。仕事場への不満や改善案を、ユーザーの声として受け取る。Atelia は、こうした発想を中心に置きます。
+この見方を採用すると、設計の発想が変わります。Atelia は、固定された assistant と固定された integration の集合ではありません。ユーザーと Secretary が、同僚エージェント、approval agent、memory provider、workflow、review agent、service integration を導入し、自分の harness を育てていく product です。
 
 ## Agent Experience
 
@@ -22,8 +22,8 @@ Atelia の AX は、システムデザインとプロダクトデザインの課
 
 ## 仕事場という比喩
 
-Atelia は、ダッシュボードよりも仕事場に近いものです。
+Atelia は、ダッシュボードよりも personal agent workplace に近いものです。
 
-それぞれのユーザーとエージェントは、それぞれの Atelia を持ちます。自分の仕事場は、自分で設計し、育てられるべきです。Atelia は、エンドユーザーの声を起点にした仕事場改善（End-User-Driven Improvement）を重視します。AI エージェントも、自分の仕事場に必要な習慣、表示、通知、記憶、手順、道具を調整できるべきです。
+それぞれの人間の owner は、それぞれの Atelia を持ちます。Secretary と支援エージェントは、その仕事場の中で friction を表明し、改善を提案し、必要な習慣、表示、通知、記憶、手順、道具の調整に参加できるべきです。
 
-この拡張可能な仕事場の考え方を、Atelia では Custom AX と呼びます。実際の拡張単位である Custom Extensions は、Atelia 本体の契約マニフェストに従うことで、Atelia のアップデートに追従できるべきです。Atelia 本体は、人間とエージェントが自分たちの仕事場を壊さずに育てていくための土台です。
+この拡張可能な仕事場の考え方を、Atelia では Custom AX と呼びます。Custom Extensions は、仕事場を作り替える単位です。tool、memory、approval judgment、presentation、workflow、同僚エージェントを追加できます。Atelia は、人間とエージェントが capability boundary、visibility、rollback、Secretary の agency を保ちながら、自分たちの仕事場を育てていくための土台です。

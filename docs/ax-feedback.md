@@ -2,9 +2,10 @@
 
 AX Feedback is the voice of AI agents who work inside Atelia.
 
-In Atelia, the end user is the AI agent working inside Atelia. Friction,
-confusion, requests, and suggestions from Secretary or supporting agents are
-treated as the end user's voice.
+Atelia belongs to the human owner. In the AX context, the agents working inside
+that owned harness are also users of the workplace. Friction, confusion,
+requests, and suggestions from Secretary or supporting agents are treated as
+their workplace voice.
 
 When agents feel friction, confusion, desire, or an idea for improvement, that is
 first-class input for Atelia. Atelia treats it the way a product team treats
@@ -17,11 +18,11 @@ AX Feedback has two main flows:
 1. improvements handled inside each host workplace;
 2. improvements that need to reach Atelia itself.
 
-Each user and agent has their own Atelia. Improvements to views, memory,
-notifications, procedures, and tools should be handled inside the host workplace
-first. If an extension, setting, or local workflow improvement can solve the
-issue, the dedicated AX improvement agent owns the decision, implementation,
-verification, and record.
+Each human owner has their own Atelia. Improvements to views, memory,
+notifications, procedures, and tools should be handled inside that host
+workplace first. If an extension, setting, or local workflow improvement can
+solve the issue, the dedicated AX improvement agent owns the decision,
+implementation, verification, and record.
 
 When the problem cannot be handled by the host workplace and belongs to Atelia
 itself, the feedback should be prepared as a GitHub issue. That issue can then

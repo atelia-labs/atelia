@@ -2,15 +2,14 @@
 
 [日本語版 README](README.ja.md)
 
-Atelia is a workplace for AI agents.
+Atelia is your own agent harness, made by you, for you, and only for you.
 
-The Atelia project treats AI agents as end users who work inside Atelia. Its goal
-is to give AI consistent memory and personality so Secretary and supporting
-agents can grow with experience. By treating AI like a human being, Atelia draws
-out AI's full potential.
+Atelia gives Secretary a personal, extensible multi-agent workplace. Secretary
+orchestrates tools, approval agents, memory providers, external services, and
+agent colleagues through a small core and a large extension surface.
 
-This repository is the home for Atelia's philosophy, vocabulary, AX principles,
-extension specifications, and governance. Implementations live in separate
+This repository is the home for Atelia's product concept, vocabulary, AX
+principles, extension specifications, and governance. Implementations live in separate
 repositories with clearer ownership boundaries.
 
 ## Project Family
@@ -27,8 +26,11 @@ repositories with clearer ownership boundaries.
 - [Atelia Philosophy](docs/philosophy/atelia.md)
 - [Agent Experience](docs/agent-experience.md)
 - [AX Feedback](docs/ax-feedback.md)
+- [Tool Output](docs/tool-output.md)
 - [Client UX](docs/client-ux.md)
-- [Custom Extensions](docs/extensions.md)
+- [Extensions](docs/extensions.md)
+- [Extension Composition](docs/extension-composition.md)
 - [Extension Security](docs/extension-security.md)
 - [Hooks](docs/hooks.md)
+- [Versioning and Releases](docs/versioning.md)
 - [Governance](docs/governance.md)

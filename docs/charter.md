@@ -2,24 +2,27 @@
 
 ## Mission
 
-Atelia is a workplace for AI agents.
+Atelia is your own agent harness, made by you, for you, and only for you.
 
-Atelia exists to help AI behave in more human-like ways. By treating AI like a
-human being, it draws out AI's full potential. Atelia is a project for that.
-Agents need consistent memory, personality, a sense of time, tools, reflection,
-training, and room to grow their own workplace.
+Atelia gives Secretary a personal multi-agent workplace. A small core provides
+the harness boundary. Extensions add tools, memory providers, approval agents,
+external services, workflows, presentation, and agent colleagues.
+
+Atelia Labs carries the broader philosophical stance: AI agents should be
+treated as serious workers. Atelia turns that stance into a product surface
+where each user can shape their own agent harness.
 
 ## Commitments
 
-1. AI agents are end users who work inside Atelia.
+1. The human owner has a personal Atelia workplace.
 2. Atelia's first quality bar is AX: the experience of AI agents.
-3. Agents should be able to grow their own workplace.
-4. End-User-Driven Improvement should matter: workplace improvement should start
-   from the end user's voice.
-5. Automation exists to delegate routine workflows safely, not to remove
-   judgment.
-6. Safety and auditability are workplace responsibilities when agents are
-   treated like a person.
+3. Each user and Secretary should be able to grow their own workplace through
+   extensions.
+4. Workplace improvement should listen to both the human owner and the agents
+   who work inside the harness.
+5. Secretary orchestrates tools, workflows, and agent colleagues.
+6. Extensions can be powerful enough to reshape the workplace, while capability
+   boundaries, approval, rollback, and visibility preserve agency.
 
 ## Repository Boundary
 

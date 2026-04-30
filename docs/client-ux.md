@@ -21,7 +21,8 @@ policy, then act, approve, or intervene when needed.
   the same workplace;
 - connect the in-app terminal naturally with Git operations;
 - keep CLI / IDE / app / cloud history and configuration connected;
-- create, install, and manage plugins, skills, automations, and extensions;
+- create, install, and manage extensions, including plugin-like tools, skills,
+  automations, and agent providers;
 - inspect and manage Hooks, external events, policies, permissions, and audit
   logs;
 - use a review queue so humans can return at the right moment;

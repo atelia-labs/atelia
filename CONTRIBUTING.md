@@ -23,4 +23,3 @@ Keep pull requests focused. Include:
 For now, maintainers may merge small documentation-only pull requests after one
 review. Larger specification or governance changes should link to an issue or
 discussion.
-

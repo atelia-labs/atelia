@@ -2,20 +2,20 @@
 
 ## ミッション
 
-Atelia は、AI エージェントのための仕事場です。
+Atelia は、あなたによる、あなたのための、あなただけのエージェント・ハーネスです。
 
-AI が人間らしく振る舞えるようにすること。AI を一人の人間のように扱うことで、そのポテンシャルを最大限に引き出すこと。Atelia は、そのためのプロジェクトです。
+Atelia は、Secretary のための personal な multi-agent workplace です。小さな core が harness boundary を提供し、extension が tool、memory provider、approval agent、外部サービス、workflow、presentation、同僚エージェントを追加します。
 
-エージェントには一貫した記憶と人格、時間感覚、道具、内省、学習の機会、そして自分の仕事場を育てていく余地が必要です。
+AI エージェントを serious worker として扱うという広い思想は Atelia Labs が引き受けます。Atelia は、その思想を、ユーザーごとに育てられる agent harness としてプロダクト化します。
 
 ## 約束
 
-1. AI エージェントは Atelia で働くエンドユーザーである
+1. 人間の owner は、自分専用の Atelia workplace を持つ
 2. Atelia の第一の品質は、AI エージェントにとっての体験、すなわち AX（Agent Experience）である
-3. エージェントは自分の仕事場を育てられるべきである
-4. エンドユーザーの声を起点にした仕事場改善（End-User-Driven Improvement）を重視する
-5. 自動化は判断を奪うためではなく、定型ワークフローを安全に委譲するためにある
-6. 安全性と監査可能性は、エージェントを人間のように扱うときの仕事場側の責任である
+3. ユーザーと Secretary は、extension を通じて自分の仕事場を育てられるべきである
+4. 仕事場改善では、人間の owner と harness の中で働く agent の声をどちらも重視する
+5. Secretary は tool、workflow、同僚エージェントを orchestrate する
+6. extension は仕事場を作り替えられるほど強くできる。capability boundary、approval、rollback、visibility により agency を保つ
 
 ## リポジトリ境界
 

@@ -17,4 +17,3 @@ Include:
 
 Atelia treats extension execution, repository access, secrets, automation,
 hooks, and external event sources as security-sensitive areas.
-

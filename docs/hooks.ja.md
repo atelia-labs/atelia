@@ -18,3 +18,34 @@ Hook surface には次の情報を含めます。
 - Atelia が block した理由
 
 Hook は、manifest と実際の挙動が一致している場合にのみ有効化できます。権限変更や発火条件の変更があった場合は、再承認を必要とします。
+
+## Hook Kind
+
+- user-created hook
+- extension-created hook
+- system hook
+- scheduled hook
+- external webhook hook
+- workflow continuation hook
+
+## Webhook Contract
+
+外部 webhook hook は、少なくとも次を宣言します。
+
+- allowed source
+- event schema version
+- signature verification method
+- timestamp / replay window
+- delivery id dedupe
+- secret rotation expectation
+- failure policy
+- rate limit
+- disabled / blocked behavior
+
+signature verification に失敗した event は `unverified` / `failed` state として扱い、action を発火しません。
+
+## Agency Preservation
+
+Hook は Secretary の判断を支援するものです。event を action に直結させる場合でも、Secretary が inspect、pause、disable、reroute できるべきです。
+
+特に extension-created hook は、Secretary に見えない workflow routing や memory update を作らないよう、発火条件、権限、実行履歴、変更された状態を表示します。

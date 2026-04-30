@@ -1,0 +1,58 @@
+name: Agent task
+description: A scoped implementation or documentation task intended for a coding agent.
+title: "[Agent Task]: "
+labels: ["type: agent-task", "agent: ready", "needs: triage"]
+body:
+  - type: textarea
+    id: goal
+    attributes:
+      label: Goal
+      description: What should be true when this task is complete?
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: Background, links, constraints, and relevant prior decisions.
+    validations:
+      required: true
+  - type: textarea
+    id: required_reading
+    attributes:
+      label: Required reading before implementation
+      value: |
+        - [ ] `docs/charter.md`
+        - [ ] `docs/philosophy/atelia.md`
+        - [ ] `docs/governance.md`
+        - [ ] Docs directly affected by this task
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: Concrete checks the agent and reviewer can use.
+      value: |
+        - [ ]
+        - [ ]
+        - [ ]
+    validations:
+      required: true
+  - type: textarea
+    id: self_review
+    attributes:
+      label: Required self-review before PR
+      value: |
+        - [ ] The diff is scoped to this issue.
+        - [ ] I re-read the required documents after implementing.
+        - [ ] I checked terminology against the project docs.
+        - [ ] I considered security, auditability, AX, and public-facing impact.
+        - [ ] I listed follow-up work or confirmed none is needed.
+    validations:
+      required: true
+  - type: textarea
+    id: human_decisions
+    attributes:
+      label: Human decisions or blockers
+      description: What must a human decide before or during implementation?

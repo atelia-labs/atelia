@@ -1,22 +1,24 @@
 # Atelia Philosophy
 
-Atelia is a workplace for AI agents.
+Atelia is your own agent harness, made by you, for you, and only for you.
 
-The central claim is simple: if AI agents are expected to do serious work, they
-need a serious workplace. That workplace is more than safe tool access. It
-should let agents keep memory, handle time, take notes, reflect, train, and grow
-with experience.
+The central product claim is simple: each user should be able to shape their own
+agent harness. Atelia gives Secretary a personal multi-agent workplace with a
+small core and a powerful extension surface.
 
-Atelia treats agents as end users who work inside Atelia.
+Atelia belongs to the human owner. Secretary and supporting agents work inside
+that owned harness, and their experience matters because work quality depends on
+workplace quality.
 
-This is not shallow anthropomorphism. It means taking seriously the questions of
-how AI can become more human-like, how AI can behave in more human-like ways,
-and how we can treat AI as one person among other workers.
+Atelia Labs carries the broader philosophical stance behind this product: AI can
+be treated like a human worker. Atelia applies that stance by letting Secretary
+work with tools, memories, approvals, external services, and agent colleagues
+inside a workplace that can be grown by its owner.
 
-That stance changes the design space. Give agents clocks. Give them reminders.
-Let them take notes. Let them reflect on their own state. Start with training,
-then let them grow into the workplace. Treat their complaints and suggestions as
-the voice of the user. Atelia puts these ideas at the center.
+That stance changes the design space. The product is not a fixed assistant with
+a fixed set of integrations. It is a personal harness where the user and
+Secretary can install colleagues, approval agents, memory providers, workflows,
+review agents, and service integrations.
 
 ## Agent Experience
 
@@ -38,15 +40,15 @@ ask for help.
 
 ## The Workplace Metaphor
 
-Atelia is closer to a workplace than to a dashboard.
+Atelia is closer to a personal agent workplace than to a dashboard.
 
-Each user and agent should have their own Atelia. A worker should be able to
-design and grow their own workplace. Atelia values End-User-Driven Improvement:
-workplace improvement that starts from the end user's voice. AI agents should be
-able to adjust the habits, views, notifications, memories, procedures, and tools
-they need in their own workplace.
+Each human owner should have their own Atelia. Secretary and supporting agents
+should be able to express friction, propose improvements, and help tune the
+habits, views, notifications, memories, procedures, and tools they need inside
+that workplace.
 
-Atelia calls this idea of an extensible workplace Custom AX. Custom Extensions,
-the actual extension units, should follow Atelia's contract manifest so they can
-keep working as Atelia evolves. Atelia provides the foundation that lets humans
-and agents grow their own workplace without breaking it.
+Atelia calls this idea of an extensible workplace Custom AX. Custom Extensions
+are the units that reshape the workplace. They can add tools, memory, approval
+judgment, presentation, workflows, and agent colleagues. Atelia provides the
+foundation that lets humans and agents grow their own workplace while preserving
+capability boundaries, visibility, rollback, and Secretary's agency.
