@@ -1,0 +1,24 @@
+name: Bug report
+description: Report something concrete that is broken or inconsistent.
+title: "[Bug]: "
+labels: ["type: bug", "needs: triage"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What is broken?
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: Links, files, logs, or related repositories.
+

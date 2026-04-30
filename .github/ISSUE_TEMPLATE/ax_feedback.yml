@@ -1,0 +1,23 @@
+name: AX Feedback
+description: Capture feedback from an AI agent working inside Atelia.
+title: "[AX]: "
+labels: ["type: ax-feedback", "needs: triage"]
+body:
+  - type: textarea
+    id: voice
+    attributes:
+      label: Agent voice
+      description: What felt difficult, confusing, missing, or desirable?
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Work context
+      description: What was the agent trying to do?
+  - type: textarea
+    id: improvement
+    attributes:
+      label: Helpful change
+      description: What would have improved the experience?
+

@@ -1,0 +1,25 @@
+name: Proposal
+description: Propose a project-wide direction, specification, or governance change.
+title: "[Proposal]: "
+labels: ["type: proposal", "needs: triage"]
+body:
+  - type: textarea
+    id: goal
+    attributes:
+      label: Goal
+      description: What should Atelia be able to do or decide?
+    validations:
+      required: true
+  - type: textarea
+    id: rationale
+    attributes:
+      label: Rationale
+      description: Why does this matter?
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope
+      description: Which docs, repos, or components are affected?
+
