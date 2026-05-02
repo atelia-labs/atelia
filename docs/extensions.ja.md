@@ -1,8 +1,8 @@
 # Extensions
 
-Custom Extension は、ユーザー、Secretary、エージェントが自分の仕事場を育てるための拡張単位です。tool、service、外部サービス、表示、通知、memory provider、approval agent、review agent、delegated agent、workflow、OM integration を追加できます。
+Custom Extension は、ユーザー、Secretary、エージェントが自分の仕事場を育てるための拡張単位です。tool、service、外部サービス、表示、通知、memory provider、memory strategy、approval agent、review agent、delegated agent、workflow、Observational Memory（memory_strategy）を追加できます。
 
-Atelia の core は小さく保ちます。仕事場を大きくするのは extension です。GitHub、Linear、Codex、Claude、Devin、Jules、CodeRabbit、OM、approval、review、notification などは official extension として提供できますが、それらを core product assumption にはしません。
+Atelia の core は小さく保ちます。仕事場を大きくするのは extension です。GitHub、Linear、Codex、Claude、Devin、Jules、CodeRabbit、observational memory、approval、review、notification などは official extension として提供できますが、それらを core product assumption にはしません。
 
 Extension は GitHub 上で公開、導入、改善、貢献できる形にします。安全な拡張機能エコシステムのために、Atelia 本体は次の機能を持ちます。
 
@@ -69,7 +69,7 @@ Extension は1つ以上の kind を宣言します。kind は、その extension
 - `workflow`: 複数 step の workflow を実行する
 - `notification`: notification を送信または整形する
 - `memory_provider`: scoped workplace memory または preference surface を提供する
-- `om_provider`: Observe / Memory / Memory model implementation を提供する
+- `memory_strategy`: raw messages と compressed memory をどのように維持し、agent context に渡すかを制御する
 - `approval_agent`: approval request を review し、bounded approval decision を提出する
 - `review`: review、evidence、critique、policy check に参加する
 - `review_agent`: code、document、workflow を review する同僚エージェントとして働く
@@ -82,7 +82,11 @@ Extension は1つ以上の kind を宣言します。kind は、その extension
 
 `agent_provider` は runtime または外部 agent system を提供します。`delegated_agent` は agent provider に支えられた assignable agent instance です。branch、task、artifact ownership は delegated-agent instance が所有します。
 
-`om_provider` は declared scope の Observe / Memory / Memory model を所有します。`memory_provider` は OM provider の下で namespace または storage surface を提供します。namespace が重ならない場合、複数の memory provider は共存できます。
+Observational Memory は `memory_strategy` の一種です。agent には raw `messages` と compressed `memory` の2つの context block が渡されます。raw messages は通常の harness log です。observer は、raw message block が大きくなりすぎたときに、古い messages を memory に逐次圧縮します。messages 側は recent raw log を memory に移す処理なので、policy に応じておおよそ 6k-20k tokens 程度の bounded buffer を使えます。
+
+reflector は、`memory` 自体が大きくなりすぎたときの memory 側の再編成または置換を担当します。memory の価値は remembered item 同士の関係に宿ることが多いため、reflection は observer が recent messages に対して必要とするより広い memory view を必要とするかもしれません。reflection が incremental か、batch-like か、adaptive かは、implementation と AX testing を通じて決めます。これは memory provider の上位にある別 provider 階層ではありません。
+
+`memory_provider` は durable namespace または storage surface を提供します。namespace が重ならない場合、複数の memory provider は共存できます。
 
 ## Services
 
@@ -174,7 +178,7 @@ Official Extensions は、よく使う能力への first-party pathway です。
 - Jules agent provider
 - CodeRabbit review provider
 - Approval Agent
-- OM provider
+- observational memory strategy
 - notification and digest extensions
 - PR resolve / review companion agents
 

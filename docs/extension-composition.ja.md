@@ -13,7 +13,8 @@ extension は surface に attach します。underlying contract は [Extensions
 - hook / webhook routing
 - workflow routing
 - approval requests
-- memory / OM provider
+- memory provider
+- memory strategy
 - notification routing
 - presentation
 - delegated agent pool
@@ -36,7 +37,7 @@ extension は surface に attach します。underlying contract は [Extensions
 
 ## Surface Modes
 
-- `exclusive`: workspace の default OM provider など、同時に1つだけ owner を持つ
+- `exclusive`: workspace の default memory strategy など、同時に1つだけ owner を持つ
 - `pipeline`: tool-output renderer など、順序付き chain として動く
 - `advisory`: approval agent や review agent など、複数 extension が decision を提案する
 - `mirror`: notification など、同じ event を複数 consumer が受け取る
@@ -79,7 +80,8 @@ conflict の例:
 - 2つの delegated agent が同じ branch または task ownership を claim する
 - 2つの extension が同じ resource namespace / resource で incompatible な exclusive ownership を claim する
 - 2つの service provider が同じ service namespace を incompatible schema で claim する
-- 2つの OM provider が同じ memory namespace を own しようとする
+- 2つの memory provider が同じ namespace を own しようとする
+- 2つの memory strategy が同じ thread context を rewrite しようとする
 - workflow extension が、別 workflow が own している event を reroute する
 - presentation extension が required state を隠す
 - integration extension が declared scope 外の protected external account に write する
@@ -123,7 +125,7 @@ workplace profile は named extension composition です。
 examples:
 
 - coding: Codex, Claude, GitHub, PR Resolve Agent, Approval Agent
-- product: Linear, Slack, Claude, digest notifications, OM provider
+- product: Linear, Slack, Claude, digest notifications, observational memory strategy
 - autonomous development: Devin, Jules, CodeRabbit, GitHub, Approval Agent
 - quiet mode: minimal notifications, strict approval, no delegated agents
 

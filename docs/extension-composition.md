@@ -18,7 +18,8 @@ Extensions attach to surfaces. See [Extensions](extensions.md),
 - hook and webhook routing
 - workflow routing
 - approval requests
-- memory / OM provider
+- memory provider
+- memory strategy
 - notification routing
 - presentation
 - delegated agent pool
@@ -42,7 +43,8 @@ Each attachment declares:
 
 ## Surface Modes
 
-- `exclusive`: one owner at a time, such as default OM provider for a workspace
+- `exclusive`: one owner at a time, such as the default memory strategy for a
+  workspace
 - `pipeline`: ordered chain, such as tool-output renderers
 - `advisory`: multiple extensions can propose decisions, such as approval or
   review agents
@@ -97,7 +99,8 @@ Conflicts include:
   namespace / resource
 - two service providers claim the same service namespace with incompatible
   schemas
-- two OM providers try to own the same memory namespace
+- two memory providers try to own the same namespace
+- two memory strategies try to rewrite the same thread context
 - a workflow extension reroutes events already owned by another workflow
 - a presentation extension hides required state
 - an integration extension writes to a protected external account outside its
@@ -146,7 +149,7 @@ A workplace profile is a named extension composition.
 Examples:
 
 - coding: Codex, Claude, GitHub, PR Resolve Agent, Approval Agent
-- product: Linear, Slack, Claude, digest notifications, OM provider
+- product: Linear, Slack, Claude, digest notifications, observational memory strategy
 - autonomous development: Devin, Jules, CodeRabbit, GitHub, Approval Agent
 - quiet mode: minimal notifications, strict approval, no delegated agents
 

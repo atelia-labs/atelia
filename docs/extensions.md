@@ -2,13 +2,14 @@
 
 Custom extensions are the extension unit that lets users, Secretary, and agents
 grow their own workplace. They can add tools, services, external services,
-presentation, notifications, memory providers, approval agents, review agents,
-delegated agents, workflows, and OM integrations.
+presentation, notifications, memory providers, memory strategies, approval
+agents, review agents, delegated agents, workflows, and observational memory
+strategies.
 
 Atelia's core should stay small. Extensions make the workplace large. Official
 extensions can provide GitHub, Linear, Codex, Claude, Devin, Jules, CodeRabbit,
-OM, approval, review, and notification capabilities without turning those
-capabilities into core product assumptions.
+observational memory, approval, review, and notification capabilities without
+turning those capabilities into core product assumptions.
 
 Extensions should be publishable, installable, improvable, and contributable
 through GitHub. Atelia itself provides the following mechanisms for a safe
@@ -98,7 +99,8 @@ extension touches the workplace.
 - `workflow`: runs multi-step workflows;
 - `notification`: sends or formats notifications;
 - `memory_provider`: provides scoped workplace memory or preference surfaces;
-- `om_provider`: provides an Observe / Memory / Memory model implementation;
+- `memory_strategy`: controls how raw messages and compressed memory are
+  maintained and passed into agent context;
 - `approval_agent`: reviews approval requests and submits bounded approval
   decisions;
 - `review`: participates in review, evidence, critique, or policy checks;
@@ -117,10 +119,22 @@ provenance, and security warnings remain visible.
 is an assignable agent instance backed by an agent provider. Branch, task, and
 artifact ownership belong to delegated-agent instances.
 
-`om_provider` owns the active Observe / Memory / Memory model for a declared
-scope. `memory_provider` supplies namespaces or storage surfaces under an OM
-provider. Multiple memory providers can coexist when their namespaces do not
-overlap.
+Observational Memory is one possible `memory_strategy`. The agent receives two
+context blocks: raw `messages` and compressed `memory`. Raw messages are the
+normal harness log. An observer incrementally compresses older messages into
+memory when the raw message block grows too large. The messages side can use a
+bounded buffer, often around 6k-20k tokens depending on policy, because it is
+compressing recent raw log into memory.
+
+A reflector handles memory-side reorganization or replacement when `memory`
+itself grows too large. Reflection may need a wider view of memory than the
+observer needs of recent messages, because the value often lives in the
+relationships between remembered items. Whether reflection is incremental,
+batch-like, or adaptive should be decided through implementation and AX testing.
+This is not a separate provider hierarchy above memory providers.
+
+`memory_provider` supplies durable namespaces or storage surfaces. Multiple
+memory providers can coexist when their namespaces do not overlap.
 
 ## Services
 
@@ -235,7 +249,7 @@ Initial official extension families can include:
 - Jules agent provider
 - CodeRabbit review provider
 - Approval Agent
-- OM provider
+- observational memory strategy
 - notification and digest extensions
 - PR resolve / review companion agents
 
