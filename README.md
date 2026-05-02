@@ -8,6 +8,9 @@ Atelia gives Secretary a personal, extensible multi-agent workplace. Secretary
 orchestrates tools, approval agents, memory providers, external services, and
 agent colleagues through a small core and a large extension surface.
 
+Atelia aims for MDP: a Minimum Desirable / Delightful Product that is small,
+worth wanting, trustworthy, and pleasant to return to from the beginning.
+
 This repository is the home for Atelia's product concept, vocabulary, AX
 principles, extension specifications, and governance. Implementations live in separate
 repositories with clearer ownership boundaries.

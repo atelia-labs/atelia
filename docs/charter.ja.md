@@ -12,10 +12,11 @@ AI エージェントを serious worker として扱うという広い思想は 
 
 1. 人間の owner は、自分専用の Atelia workplace を持つ
 2. Atelia の第一の品質は、AI エージェントにとっての体験、すなわち AX（Agent Experience）である
-3. ユーザーと Secretary は、extension を通じて自分の仕事場を育てられるべきである
-4. 仕事場改善では、人間の owner と harness の中で働く agent の声をどちらも重視する
-5. Secretary は tool、workflow、同僚エージェントを orchestrate する
-6. extension は仕事場を作り替えられるほど強くできる。capability boundary、approval、rollback、visibility により agency を保つ
+3. Atelia は、単なる技術的最小限ではなく、MDP（Minimum Desirable / Delightful Product）として育てる
+4. ユーザーと Secretary は、extension を通じて自分の仕事場を育てられるべきである
+5. 仕事場改善では、人間の owner と harness の中で働く agent の声をどちらも重視する
+6. Secretary は tool、workflow、同僚エージェントを orchestrate する
+7. extension は仕事場を作り替えられるほど強くできる。capability boundary、approval、rollback、visibility により agency を保つ
 
 ## リポジトリ境界
 
