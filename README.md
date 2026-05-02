@@ -29,6 +29,7 @@ repositories with clearer ownership boundaries.
 - [Tool Output](docs/tool-output.md)
 - [Client UX](docs/client-ux.md)
 - [Extensions](docs/extensions.md)
+- [Extension Manifest Schema](docs/extension-manifest-schema.md)
 - [Extension Composition](docs/extension-composition.md)
 - [Extension Security](docs/extension-security.md)
 - [Hooks](docs/hooks.md)

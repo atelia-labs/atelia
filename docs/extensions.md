@@ -31,6 +31,9 @@ The permission model should be at least as strict as Chrome extensions.
 
 ## Manifest
 
+See [Extension Manifest Schema](extension-manifest-schema.md) for the first
+implementation-oriented manifest shape.
+
 An extension manifest should express at least:
 
 - extension id, name, version, publisher, and description;
