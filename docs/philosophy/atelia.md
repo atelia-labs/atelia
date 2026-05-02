@@ -20,6 +20,21 @@ a fixed set of integrations. It is a personal harness where the user and
 Secretary can install colleagues, approval agents, memory providers, workflows,
 review agents, and service integrations.
 
+## Minimum Desirable / Delightful Product
+
+Atelia does not treat the first product as a Minimum Viable Product. Viable is
+not enough for a personal agent harness.
+
+Atelia aims for an MDP: a Minimum Desirable / Delightful Product. Desirable
+means the product solves a real need strongly enough that a person wants it in
+their life and work. Delightful means the experience feels careful, legible, and
+alive when humans, Secretary, and supporting agents use it together.
+
+This does not mean making the first product large. It means choosing a small
+first loop that is already worth wanting, trustworthy, inspectable, and pleasant
+to return to. Atelia should grow from a living product surface, not from a bare
+technical proof.
+
 ## Agent Experience
 
 Agent Experience, or AX, is the experience AI agents have while working in
