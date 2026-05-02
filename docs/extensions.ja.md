@@ -82,7 +82,9 @@ Extension は1つ以上の kind を宣言します。kind は、その extension
 
 `agent_provider` は runtime または外部 agent system を提供します。`delegated_agent` は agent provider に支えられた assignable agent instance です。branch、task、artifact ownership は delegated-agent instance が所有します。
 
-Observational Memory は `memory_strategy` の一種です。agent には raw `messages` と compressed `memory` の2つの context block が渡されます。raw messages は通常の harness log です。messages は、policy によりますが、おおよそ 6k-20k tokens 程度の bounded LLM pass で逐次圧縮されます。raw messages が threshold を超えたら、古い圧縮 chunk から順に `memory` へ移し、`messages` が threshold を下回る状態に戻します。`memory` 側にも独自の threshold があり、こちらも逐次圧縮され、必要に応じて memory 内の古い内容を置換します。これは memory provider の上位にある別 provider 階層ではありません。
+Observational Memory は `memory_strategy` の一種です。agent には raw `messages` と compressed `memory` の2つの context block が渡されます。raw messages は通常の harness log です。observer は、raw message block が大きくなりすぎたときに、古い messages を memory に逐次圧縮します。messages 側は recent raw log を memory に移す処理なので、policy に応じておおよそ 6k-20k tokens 程度の bounded buffer を使えます。
+
+reflector は、`memory` 自体が大きくなりすぎたときの memory 側の再編成または置換を担当します。memory の価値は remembered item 同士の関係に宿ることが多いため、reflection は observer が recent messages に対して必要とするより広い memory view を必要とするかもしれません。reflection が incremental か、batch-like か、adaptive かは、implementation と AX testing を通じて決めます。これは memory provider の上位にある別 provider 階層ではありません。
 
 `memory_provider` は durable namespace または storage surface を提供します。namespace が重ならない場合、複数の memory provider は共存できます。
 

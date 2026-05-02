@@ -121,12 +121,17 @@ artifact ownership belong to delegated-agent instances.
 
 Observational Memory is one possible `memory_strategy`. The agent receives two
 context blocks: raw `messages` and compressed `memory`. Raw messages are the
-normal harness log. They are compressed incrementally in bounded LLM passes,
-often around 6k-20k tokens depending on policy. When raw messages exceed a
-threshold, older compressed chunks move into `memory` until `messages` falls
-back under the threshold. `memory` has its own threshold and is also compressed
-incrementally, replacing older memory content when needed. This is not a
-separate provider hierarchy above memory providers.
+normal harness log. An observer incrementally compresses older messages into
+memory when the raw message block grows too large. The messages side can use a
+bounded buffer, often around 6k-20k tokens depending on policy, because it is
+compressing recent raw log into memory.
+
+A reflector handles memory-side reorganization or replacement when `memory`
+itself grows too large. Reflection may need a wider view of memory than the
+observer needs of recent messages, because the value often lives in the
+relationships between remembered items. Whether reflection is incremental,
+batch-like, or adaptive should be decided through implementation and AX testing.
+This is not a separate provider hierarchy above memory providers.
 
 `memory_provider` supplies durable namespaces or storage surfaces. Multiple
 memory providers can coexist when their namespaces do not overlap.
