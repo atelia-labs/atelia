@@ -69,7 +69,7 @@ Extension は1つ以上の kind を宣言します。kind は、その extension
 - `workflow`: 複数 step の workflow を実行する
 - `notification`: notification を送信または整形する
 - `memory_provider`: scoped workplace memory または preference surface を提供する
-- `memory_strategy`: conversation / tool history をどのように観測し、圧縮し、reflection し、agent context に戻すかを制御する
+- `memory_strategy`: raw messages と compressed memory をどのように維持し、agent context に渡すかを制御する
 - `approval_agent`: approval request を review し、bounded approval decision を提出する
 - `review`: review、evidence、critique、policy check に参加する
 - `review_agent`: code、document、workflow を review する同僚エージェントとして働く
@@ -82,7 +82,7 @@ Extension は1つ以上の kind を宣言します。kind は、その extension
 
 `agent_provider` は runtime または外部 agent system を提供します。`delegated_agent` は agent provider に支えられた assignable agent instance です。branch、task、artifact ownership は delegated-agent instance が所有します。
 
-Observational Memory は `memory_strategy` の一種です。observer が最近の message と tool result を dated observation に変換し、reflector が observation を定期的に圧縮することで、agent は安定した小さな context を保てます。これは memory provider の上位にある別 provider 階層ではありません。
+Observational Memory は `memory_strategy` の一種です。agent には raw `messages` と compressed `memory` の2つの context block が渡されます。raw messages は通常の harness log です。messages は、policy によりますが、おおよそ 6k-20k tokens 程度の bounded LLM pass で逐次圧縮されます。raw messages が threshold を超えたら、古い圧縮 chunk から順に `memory` へ移し、`messages` が threshold を下回る状態に戻します。`memory` 側にも独自の threshold があり、こちらも逐次圧縮され、必要に応じて memory 内の古い内容を置換します。これは memory provider の上位にある別 provider 階層ではありません。
 
 `memory_provider` は durable namespace または storage surface を提供します。namespace が重ならない場合、複数の memory provider は共存できます。
 

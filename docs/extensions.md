@@ -99,8 +99,8 @@ extension touches the workplace.
 - `workflow`: runs multi-step workflows;
 - `notification`: sends or formats notifications;
 - `memory_provider`: provides scoped workplace memory or preference surfaces;
-- `memory_strategy`: controls how conversation and tool history is observed,
-  compressed, reflected on, and presented back into agent context;
+- `memory_strategy`: controls how raw messages and compressed memory are
+  maintained and passed into agent context;
 - `approval_agent`: reviews approval requests and submits bounded approval
   decisions;
 - `review`: participates in review, evidence, critique, or policy checks;
@@ -119,10 +119,14 @@ provenance, and security warnings remain visible.
 is an assignable agent instance backed by an agent provider. Branch, task, and
 artifact ownership belong to delegated-agent instances.
 
-Observational Memory is one possible `memory_strategy`: an observer turns recent
-messages and tool results into dated observations, and a reflector periodically
-condenses those observations so the agent keeps a stable, compact context. It is
-not a separate provider hierarchy above memory providers.
+Observational Memory is one possible `memory_strategy`. The agent receives two
+context blocks: raw `messages` and compressed `memory`. Raw messages are the
+normal harness log. They are compressed incrementally in bounded LLM passes,
+often around 6k-20k tokens depending on policy. When raw messages exceed a
+threshold, older compressed chunks move into `memory` until `messages` falls
+back under the threshold. `memory` has its own threshold and is also compressed
+incrementally, replacing older memory content when needed. This is not a
+separate provider hierarchy above memory providers.
 
 `memory_provider` supplies durable namespaces or storage surfaces. Multiple
 memory providers can coexist when their namespaces do not overlap.
