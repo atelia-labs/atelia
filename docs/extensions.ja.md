@@ -1,6 +1,6 @@
 # Extensions
 
-Custom Extension は、ユーザー、Secretary、エージェントが自分の仕事場を育てるための拡張単位です。tool、service、外部サービス、表示、通知、memory provider、memory strategy、approval agent、review agent、delegated agent、workflow、observational memory integration を追加できます。
+Custom Extension は、ユーザー、Secretary、エージェントが自分の仕事場を育てるための拡張単位です。tool、service、外部サービス、表示、通知、memory provider、memory strategy、approval agent、review agent、delegated agent、workflow、Observational Memory（memory_strategy）を追加できます。
 
 Atelia の core は小さく保ちます。仕事場を大きくするのは extension です。GitHub、Linear、Codex、Claude、Devin、Jules、CodeRabbit、observational memory、approval、review、notification などは official extension として提供できますが、それらを core product assumption にはしません。
 

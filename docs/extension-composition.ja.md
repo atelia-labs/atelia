@@ -125,7 +125,7 @@ workplace profile は named extension composition です。
 examples:
 
 - coding: Codex, Claude, GitHub, PR Resolve Agent, Approval Agent
-- product: Linear, Slack, Claude, digest notifications, observational memory
+- product: Linear, Slack, Claude, digest notifications, observational memory strategy
 - autonomous development: Devin, Jules, CodeRabbit, GitHub, Approval Agent
 - quiet mode: minimal notifications, strict approval, no delegated agents
 

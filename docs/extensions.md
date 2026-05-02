@@ -4,7 +4,7 @@ Custom extensions are the extension unit that lets users, Secretary, and agents
 grow their own workplace. They can add tools, services, external services,
 presentation, notifications, memory providers, memory strategies, approval
 agents, review agents, delegated agents, workflows, and observational memory
-integrations.
+strategies.
 
 Atelia's core should stay small. Extensions make the workplace large. Official
 extensions can provide GitHub, Linear, Codex, Claude, Devin, Jules, CodeRabbit,
