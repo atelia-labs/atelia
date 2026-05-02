@@ -171,7 +171,7 @@ Updates outside the declared range are blocked until a new manifest is approved.
 - `workflow`
 - `notification`
 - `memory_provider`
-- `om_provider`
+- `memory_strategy`
 - `approval_agent`
 - `review`
 - `review_agent`

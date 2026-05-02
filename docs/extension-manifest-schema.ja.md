@@ -167,7 +167,7 @@ Compatibility は次の version range を宣言します。
 - `workflow`
 - `notification`
 - `memory_provider`
-- `om_provider`
+- `memory_strategy`
 - `approval_agent`
 - `review`
 - `review_agent`
