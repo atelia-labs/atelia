@@ -63,8 +63,11 @@ composition:
   attachments:
     - surface: agent.provider.github
       scope: workspace
+      resource_namespace: agent.provider
       mode: shared
       priority: 50
+      produced_state:
+        provider: github
       rollback: disable_extension
       conflict_policy: prefer_existing
 agency:
