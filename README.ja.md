@@ -25,6 +25,7 @@ Atelia は、Secretary のための personal で extensible な multi-agent work
 - [Tool Output](docs/tool-output.ja.md)
 - [Client UX](docs/client-ux.ja.md)
 - [Extensions](docs/extensions.ja.md)
+- [Extension Manifest Schema](docs/extension-manifest-schema.ja.md)
 - [Extension Composition](docs/extension-composition.ja.md)
 - [Extension Security](docs/extension-security.ja.md)
 - [Hooks](docs/hooks.ja.md)
